@@ -1,0 +1,94 @@
+<!-- EJERCICIO
+
+Crea un documento html con div central (“el cuadrado principal”) que contenga a su vez cuatro divs (los cuadrados
+secundarios). Debajo del cuadrado principal debe aparecer un botón con el texto “Avanzar”. Inicialmente los cuatro
+cuadrados tendrán fondo blanco y un signo ? de gran tamaño. Al pulsar en el botón por primera vez, el cuadrado superior
+izquierdo debe aparecer con fondo negro, texto blanco, y tener como texto “El”. Al pulsar de nuevo el botón, el cuadrado
+superior derecho debe aparecer con fondo blanco y texto negro y tener como texto “poder”. Al pulsar de nuevo el botón el
+cuadrado inferior izquierdo debe aparecer con fondo blanco y texto negro y tener como texto “de”. Al pulsar de nuevo el
+botón el cuadrado inferior derecho debe aparecer con fondo amarillo y texto negro y tener como texto “JavaScript”. Si se
+pulsa nuevamente el botón avanzar debe mostrarse un mensaje que indique “No es posible avanzar más”. -->
+
+<!DOCTYPE html>
+<html>
+<head>
+   <title></title>
+   <meta charset="UTF-8"/>
+   <style type="text/css">
+      body{
+         margin:  auto;
+      }
+      #container{
+        align-content: center;
+        margin:200px;
+         border: none;
+         width: 205px;
+         height: 205px;
+         overflow: hidden;
+      }
+      div{
+        margin:auto;
+         width: 100px;
+         height: 100px;
+         text-align: center;
+         line-height: 100px;
+         float: left;
+         /*margin: 1px;*/
+      }
+      div#uno, div#dos, div#tres, div#cuatro{
+         border: 1px solid black;
+      }
+      input{
+         display: block;
+         clear: both;
+         margin-left: 70px;
+      }
+   </style>
+   <script type="text/javascript">
+      var cont = 0;
+
+      function inicio () {
+         var uno = document.getElementById("uno");
+         var dos = document.getElementById("dos");
+         var tres = document.getElementById("tres");
+         var cuatro = document.getElementById("cuatro");
+         var salida = document.getElementById("salida");
+
+         var boton = document.getElementById("botonUnico");
+         boton.addEventListener("click", function(){
+            cont++;
+
+            if (cont == 1) {
+               uno.innerHTML = "<div style='background-color:black; width:100px; height:100px; color:white'>El<div/>";
+            };
+            if (cont == 2) {
+               dos.textContent = "poder";   
+            };
+            if (cont == 3) {
+               tres.textContent = "de";
+            };
+            if (cont == 4) {
+               cuatro.innerHTML = "<div style=' background-color:yellow'>JavaScript<div/>";
+            };
+            if (cont > 4) {
+                salida.style.color="red";
+              salida.value="El señor de los anillos";
+            };
+         });
+      }
+   </script>
+</head>
+<body>
+   <div id="container">
+      <div id="uno">?</div>
+      <div id="dos">?</div>
+      <div id="tres">?</div>
+      <div id="cuatro">?</div>
+   </div>
+   <input id="salida" type="text"value="Hola">
+   <input type="button" value="Avanzar" id="botonUnico"/>
+   <script type="text/javascript">
+      inicio();
+   </script>
+</body>
+</html>

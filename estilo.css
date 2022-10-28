@@ -1,0 +1,19 @@
+.container{
+    margin-top: 250px;
+    
+   
+}
+
+.cuadrado{
+padding-top: 100px;
+width: 29%;
+font-size: 50px;
+font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+text-align: center;
+margin-left: 3%;
+border: 1px solid black;
+height: 200px;
+float:left;
+background-color: aqua;
+
+}
