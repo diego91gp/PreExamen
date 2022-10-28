@@ -11,23 +11,26 @@ pulsa nuevamente el botón avanzar debe mostrarse un mensaje que indique “No e
 
 <!DOCTYPE html>
 <html>
+
 <head>
    <title></title>
-   <meta charset="UTF-8"/>
+   <meta charset="UTF-8" />
    <style type="text/css">
-      body{
-         margin:  auto;
+      body {
+         margin: auto;
       }
-      #container{
-        align-content: center;
-        margin:200px;
+
+      #container {
+         align-content: center;
+         margin: 200px;
          border: none;
          width: 205px;
          height: 205px;
          overflow: hidden;
       }
-      div{
-        margin:auto;
+
+      div {
+         margin: auto;
          width: 100px;
          height: 100px;
          text-align: center;
@@ -35,10 +38,15 @@ pulsa nuevamente el botón avanzar debe mostrarse un mensaje que indique “No e
          float: left;
          /*margin: 1px;*/
       }
-      div#uno, div#dos, div#tres, div#cuatro{
+
+      div#uno,
+      div#dos,
+      div#tres,
+      div#cuatro {
          border: 1px solid black;
       }
-      input{
+
+      input {
          display: block;
          clear: both;
          margin-left: 70px;
@@ -47,7 +55,7 @@ pulsa nuevamente el botón avanzar debe mostrarse un mensaje que indique “No e
    <script type="text/javascript">
       var cont = 0;
 
-      function inicio () {
+      function inicio() {
          var uno = document.getElementById("uno");
          var dos = document.getElementById("dos");
          var tres = document.getElementById("tres");
@@ -55,14 +63,14 @@ pulsa nuevamente el botón avanzar debe mostrarse un mensaje que indique “No e
          var salida = document.getElementById("salida");
 
          var boton = document.getElementById("botonUnico");
-         boton.addEventListener("click", function(){
+         boton.addEventListener("click", function () {
             cont++;
 
             if (cont == 1) {
                uno.innerHTML = "<div style='background-color:black; width:100px; height:100px; color:white'>El<div/>";
             };
             if (cont == 2) {
-               dos.textContent = "poder";   
+               dos.textContent = "poder";
             };
             if (cont == 3) {
                tres.textContent = "de";
@@ -71,13 +79,14 @@ pulsa nuevamente el botón avanzar debe mostrarse un mensaje que indique “No e
                cuatro.innerHTML = "<div style=' background-color:yellow'>JavaScript<div/>";
             };
             if (cont > 4) {
-                salida.style.color="red";
-              salida.value="El señor de los anillos";
+               salida.style.color = "red";
+               salida.value = "El señor de los anillos";
             };
          });
       }
    </script>
 </head>
+
 <body>
    <div id="container">
       <div id="uno">?</div>
@@ -85,10 +94,11 @@ pulsa nuevamente el botón avanzar debe mostrarse un mensaje que indique “No e
       <div id="tres">?</div>
       <div id="cuatro">?</div>
    </div>
-   <input id="salida" type="text"value="Hola">
-   <input type="button" value="Avanzar" id="botonUnico"/>
+   <input id="salida" type="text" value="Hola">
+   <input type="button" value="Avanzar" id="botonUnico" />
    <script type="text/javascript">
       inicio();
    </script>
 </body>
+
 </html>
